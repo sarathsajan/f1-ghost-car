@@ -1,20 +1,22 @@
-# f1-ghost-car
+# F1 Ghost Car Visualisation
 
-Generate a video with a ghost car effect (as seen in video games) on the POV video of car A and utilizing telemetry data of car A and car B.
----
-
-## Project Intent
-
-This project aims to:
-1. Fetch telemetry data for two cars (Car A and Car B) from Formula 1 sessions.
-2. Process the telemetry data to identify key metrics such as lap times and speed.
-3. Overlay the telemetry data of Car B as a "ghost car" on the POV video of Car A.
-4. Generate a final video showcasing the ghost car effect, allowing for visual comparison of performance.
+Generate a video with a ghost car effect (as seen in video games) on the POV video of car-A and utilizing telemetry data of car-A and car-B.
 
 expected outcome : https://www.youtube.com/watch?v=lXuAf8ly6hs
+
+## Project Intent
 ---
 
+This project aims to:
+1. Fetch telemetry data for two cars (car-A and car-B) from Formula 1 sessions.
+2. Process the telemetry data to identify key metrics such as normalised track coordinates in 3D coordiantes space of both cars.
+3. Parent the car-A POV video on the car-A track coordinates.
+4. Parent the car-B 3D model on the car-B track coordinates.
+3. Overlay the 3D model of car-B as a "ghost car" on the POV video of car-A.
+4. Generate a final video showcasing the ghost car effect, allowing for visual comparison of performance.
+
 ## Current Status
+---
 
 ### Project Structure
 
@@ -33,4 +35,4 @@ Update the `config.json` file to specify the driver, session, and year for the t
     "session_type": "race",
     "year": 2021
 }
----
+```
