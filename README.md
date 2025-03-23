@@ -5,7 +5,7 @@ Generate a video with a ghost car effect (as seen in video games) on the POV vid
 expected outcome : https://www.youtube.com/watch?v=lXuAf8ly6hs
 
 ## Project Intent
----
+
 
 This project aims to:
 1. Fetch telemetry data for two cars (car-A and car-B) from Formula 1 sessions.
@@ -16,7 +16,7 @@ This project aims to:
 4. Generate a final video showcasing the ghost car effect, allowing for visual comparison of performance.
 
 ## Current Status
----
+
 
 ### Project Structure
 
