@@ -21,13 +21,17 @@ session.load(telemetry=True)
 # Fetch the Laps object for the specified driver
 single_driver_all_laps = session.laps.pick_drivers(DRIVER_ABBRV)
 single_driver_fastest_lap = single_driver_all_laps.pick_fastest()
-single_driver_fastest_lap.telemetry.to_csv(f'{DRIVER_ABBRV}_{YEAR}_{GP}_{SESSION_TYPE}_{str(single_driver_fastest_lap['LapTime']).replace(':','_').replace('0 days 00_','').replace('.','_')}.csv', index=False)
-
+file_name_without_extension = f'{DRIVER_ABBRV}_{YEAR}_{GP}_{SESSION_TYPE}_{str(single_driver_fastest_lap['LapTime']).replace(':','_').replace('0 days 00_','').replace('.','_')}'
+single_driver_fastest_lap.telemetry.to_csv(f'{file_name_without_extension}_telemetry.csv', index=False)
 
 # Sample data (replace with your actual coordinates)
 x = single_driver_fastest_lap.telemetry['X']
 y = single_driver_fastest_lap.telemetry['Y']
 z = single_driver_fastest_lap.telemetry['Z']
+
+# exporting the coordinates as csv file to be used in blender
+df = pd.DataFrame({'x': x, 'y': y, 'z': z})
+df.to_csv(f'{file_name_without_extension}_coordinates.csv', index=False)
 
 # Create the figure and 3D axes
 fig = plt.figure(figsize=(8, 6))
@@ -48,7 +52,7 @@ ax.view_init(elev=90, azim=0)
 plt.title('3D Scatter Plot')
 
 # Save the plot
-plt.savefig(f'{DRIVER_ABBRV}_{YEAR}_{GP}_{SESSION_TYPE}_{str(single_driver_fastest_lap['LapTime']).replace(':','_').replace('0 days 00_','').replace('.','_')}.png')
+plt.savefig(f'{file_name_without_extension}_scatterplot.png')
 
 # Show the plot
-plt.show()
+# plt.show()
