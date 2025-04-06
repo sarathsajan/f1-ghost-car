@@ -16,11 +16,7 @@ session = ff1.get_session(year=YEAR, gp=GP, identifier=SESSION_TYPE)
 session.load(telemetry=True)
 
 # Fetch the Laps object for the specified driver
-single_driver_telemetry_all_laps = session.laps.pick_drivers(DRIVER_ABBRV)
-single_driver_telemetry_fastest_lap = single_driver_telemetry_all_laps.pick_fastest()
-
-print(single_driver_telemetry_fastest_lap['LapTime'])
-
-single_driver_telemetry_all_laps.to_csv(f'{DRIVER_ABBRV}_{str(single_driver_telemetry_fastest_lap['LapTime']).replace(':','_')}_laps.csv', index=False)
-
+single_driver_all_laps = session.laps.pick_drivers(DRIVER_ABBRV)
+single_driver_fastest_lap = single_driver_all_laps.pick_fastest()
+single_driver_fastest_lap.telemetry.to_csv(f'{DRIVER_ABBRV}_{YEAR}_{GP}_{SESSION_TYPE}_{str(single_driver_fastest_lap['LapTime']).replace(':','_').replace('0 days 00_','').replace('.','_')}.csv', index=False)
 
