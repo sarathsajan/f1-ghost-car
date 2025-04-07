@@ -18,6 +18,26 @@ This project aims to:
 
 ## Current Status
 
+### Achievements So Far
+
+1. **Telemetry Data Fetching**:  
+   - Implemented the `fetch_data.py` script to fetch telemetry data for a specific driver and session using the `fastf1` library.
+   - Identified the fastest lap for the driver and exported the lap data to a CSV file.
+
+2. **Data Export**:  
+   - Successfully exported telemetry data to CSV files with dynamically generated filenames based on the driver's abbreviation, session type, and fastest lap time (e.g., `VER_2025_japan_Q_01_26_983000_telemetry.csv`).
+
+3. **Visualization**:  
+   - Generated scatter plots of telemetry data for visual analysis (e.g., `ANT_2025_japan_R_01_30_965000_scatterplot.png`).
+
+4. **Configuration Management**:  
+   - Added a `config.json` file to specify the driver abbreviation, session type, year, and other parameters for telemetry data fetching.
+
+5. **Dependencies Management**:  
+   - Created a `requirements.txt` file listing the required Python dependencies (`pandas`, `fastf1`, etc.).
+
+6. **Output Files**:  
+   - Produced various output files, including telemetry CSVs, scatter plots, and placeholder video files (e.g., `ANT_2025_japan_R_01_30_965000.mp4`).
 
 ### Project Structure
 
@@ -25,3 +45,6 @@ This project aims to:
 - `config.json`: Configuration file specifying the driver abbreviation, session, and year for the telemetry data.
 - `requirements.txt`: Lists the Python dependencies for the project (`pandas` and `fastf1`).
 - `.gitignore`: Specifies files and directories to be ignored by Git.
+- `ANT_2025_japan_R_01_30_965000_coordinates.csv`: Example output file containing normalized track coordinates.
+- `ANT_2025_japan_R_01_30_965000_scatterplot.png`: Example scatter plot visualization of telemetry data.
+- `ANT_2025_japan_R_01_30_965000.mp4`: Placeholder video file for the ghost car visualization.
