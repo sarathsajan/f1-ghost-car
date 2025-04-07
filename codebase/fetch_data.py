@@ -31,7 +31,7 @@ z = single_driver_fastest_lap.telemetry['Z']
 
 # exporting the coordinates as csv file to be used in blender
 df = pd.DataFrame({'x': x, 'y': y, 'z': z})
-df.to_csv(f'{file_name_without_extension}_coordinates.csv', index=False)
+df.to_csv(f'{DRIVER_ABBRV}_coordinates.csv', index=False)
 
 # Create the figure and 3D axes
 fig = plt.figure(figsize=(8, 6))
